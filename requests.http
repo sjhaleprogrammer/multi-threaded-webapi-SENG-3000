@@ -1,0 +1,117 @@
+
+#all 10 requests 
+
+
+
+@Admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJodHRwOi8vd3d3LmVjdS5lZHUiLCJleHAiOjE3MDE4MTQ1MzgsImF1ZGllbmNlIjoiaHR0cDovL3d3dy5lY3UuZWR1Iiwicm9sIjoiQWRtaW4iLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibm90YmVmb3JlIjoxNjk5MjIyNTM4fQ.J_8M_vKzjbQrBYVMIxXdIxcQ_iFHO7bG4mz9E5GJbsI
+@None = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJodHRwOi8vd3d3LmVjdS5lZHUiLCJleHAiOjE3MDI3Njg4NjcsImF1ZGllbmNlIjoiaHR0cDovL3d3dy5lY3UuZWR1Iiwicm9sIjoiTm9uZSIsImVtYWlsIjoiamFuZUBnbWFpbC5jb20iLCJub3RiZWZvcmUiOjE3MDAxNzY4Njd9.56aOu_k3uPrnIVjuZSh8FGIHaRDHWg_svdqDS9LK7sY
+
+### login with admin john
+POST http://127.0.0.1:5000/authenticate
+content-type: application/json; charset=utf-8
+
+{
+    "email": "john@gmail.com",
+    "password": "123"
+}
+
+### login with not an admin jane
+POST http://127.0.0.1:5000/authenticate
+content-type: application/json; charset=utf-8
+
+{
+    "email": "jane@gmail.com",
+    "password": "123"
+}
+
+
+
+###
+GET http://127.0.0.1:5000/users
+Authorization: Bearer {{Admin}}
+
+
+
+### get all users
+GET http://127.0.0.1:5000/
+
+
+### get user by id
+
+GET http://127.0.0.1:5000/users/2
+Authorization: Bearer {{None}}
+
+
+### delete user and orders with id 2
+
+DELETE http://127.0.0.1:5000/users/2
+
+
+### create new user 
+POST http://127.0.0.1:5000/users 
+content-type: application/json; charset=utf-8
+
+{
+    "full_name": "Samuel",
+    "age": 25
+}
+
+
+### update existing user
+PUT http://127.0.0.1:5000/users/2 
+content-type: application/json; charset=utf-8
+Authorization: Bearer {{Admin}}
+
+{
+    "full_name": "Jane",
+    "age": 23,
+    "email": "jane@gmail.com",
+    "role": "None",
+    "password": "123"
+    
+}
+
+
+
+
+### get all products
+
+GET http://127.0.0.1:5000/products
+
+### get product by id
+
+GET http://127.0.0.1:5000/products/1
+
+### delete product with id 2
+
+DELETE http://127.0.0.1:5000/products/2
+
+
+### create new product
+POST http://127.0.0.1:5000/products
+content-type: application/json; charset=utf-8
+
+{
+    "product_name": "Oreos",
+    "product_price": 5.99
+}
+
+
+### update existing product
+PUT http://127.0.0.1:5000/product/3
+content-type: application/json; charset=utf-8
+
+{
+    "product_name": "Oreos",
+    "product_price": 7.99
+}
+
+
+
+### get all orders
+GET http://127.0.0.1:5000/orders
+
+
+
+### delete order with id 2 
+DELETE http://127.0.0.1:5000/orders/2

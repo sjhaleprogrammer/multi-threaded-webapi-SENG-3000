@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API</title>
+</head>
+<body style="background-color: #272727; font-family: Arial, sans-serif; color: #fff; text-align: center; margin: 0; padding: 0;">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="font-size: 36px; margin-bottom: 20px;">Welcome to Samuel's API</h1>
+        
+        <div class="route-list" style="background-color: #333; border-radius: 10px; padding: 20px;">
+            <h2 style="font-size: 24px; margin-bottom: 10px;">Available Routes</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 10px 0;"><a href="/users" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">GET All User table (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/products" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">GET All Product table (ANY SIGNED IN USER)</a></li>
+                <li style="margin: 10px 0;"><a href="/orders" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">GET All Orders table (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/users/{userId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">GET User by ID (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/products/{productId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">GET Product by ID (ANY SIGNED IN USER)</a></li>
+                <li style="margin: 10px 0;"><a href="/users/{userId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">DELETE User and their orders (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/products/{productId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">DELETE Product by ID (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/orders/{orderId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">DELETE Order by ID (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/users" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">POST Create a New User and order entry</a></li>
+                <li style="margin: 10px 0;"><a href="/products" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">POST Create a New Product (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/users/{userId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">PUT modify an existing user by id (ADMIN ONLY)</a></li>
+                <li style="margin: 10px 0;"><a href="/products/{productId}" style="color: #00bcd4; text-decoration: none; transition: color 0.3s;">PUT modify an existing product (ADMIN ONLY)</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
